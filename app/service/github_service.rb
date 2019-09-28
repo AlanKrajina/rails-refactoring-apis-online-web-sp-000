@@ -17,7 +17,10 @@ class GithubService
   end
 
 
+  def get_username
 
+
+  end
 
 
 
