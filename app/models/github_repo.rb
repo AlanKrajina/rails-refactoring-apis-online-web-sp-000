@@ -1,3 +1,3 @@
-class GithubRepo
+class GithubRepo < ApplicationRecord
 
 end
