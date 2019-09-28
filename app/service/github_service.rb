@@ -42,7 +42,7 @@ def get_repos
   resp = Faraday.get 'https://api.github.com/user/repos',
     {},
     {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
-    repo_array = JSON.parse(resp.body)
+    repo_array = JSON.parse(resp.body) # array of hashes
     @repos = repo_array.map {|repo| GithubRepo.new(repo)}
 end
 
