@@ -44,6 +44,7 @@ def get_repos
     {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
     @repos_array = []
   @repos_array = JSON.parse(resp.body)
+  binding.pry
 end
 
 
