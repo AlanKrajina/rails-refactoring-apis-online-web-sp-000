@@ -17,15 +17,21 @@ class GithubService
   end
 
 
-  def get_username
-    user_resp = Faraday.get("https://api.github.com/user") do |req|
-      req.headers['Authorization'] = @access_token
-      req.headers['Accept'] = 'application/json'
-    end
-    user_hash = JSON.parse(user_resp.body)
-    session[:username] = user_hash['login']
-  end
+#  def get_username
+#    user_resp = Faraday.get("https://api.github.com/user") do |req|
+#      req.headers['Authorization'] = @access_token
+#      req.headers['Accept'] = 'application/json'
+#    end
+#    user_hash = JSON.parse(user_resp.body)
+#    session[:username] = user_hash['login']
+#  end
 
-
+def get_username
+  resp = Faraday.get 'https://api.github.com/user',
+    {},
+    {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
+  user_hash = JSON.parse(resp.body)
+  user_hash['login']
+end
 
 end
