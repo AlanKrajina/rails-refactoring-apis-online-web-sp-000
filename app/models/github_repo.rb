@@ -1,6 +1,5 @@
 class GithubRepo
-  def initialize(name,html_url)
+  def initialize(name)
     @name = name
-    @html_url = html_url
   end
 end
