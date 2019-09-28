@@ -39,7 +39,11 @@ end
 
 
 def get_repos
-
+  resp = Faraday.get 'https://api.github.com/user/repos',
+    {},
+    {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
+  user_hash = JSON.parse(resp.body)
+  user_hash['login']
 end
 
 
