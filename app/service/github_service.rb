@@ -35,4 +35,19 @@ def get_username
   user_hash['login']
 end
 
+
+
+
+def get_repos
+
+end
+
+
+
+def create_repo
+
+end
+
+
+
 end
