@@ -7,7 +7,7 @@ class GithubService
 
 
   def authenticate!(client_id, client_secret, code)
-    resp = Faraday.get("https://foursquare.com/oauth2/access_token") do |req|
+    resp = Faraday.post("https://foursquare.com/oauth2/access_token") do |req|
       req.params['client_id'] = client_id
       req.params['client_secret'] = client_secret
       req.params['grant_type'] = 'authorization_code'
