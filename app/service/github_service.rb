@@ -43,6 +43,7 @@ def get_repos
     {},
     {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
   repo_hash = JSON.parse(resp.body)
+  binding.pry
   @repos_array = repo_hash.values
 end
 
