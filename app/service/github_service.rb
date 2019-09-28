@@ -14,7 +14,6 @@ class GithubService
 
     body = JSON.parse(response.body)
     body["access_token"]
-    redirect_to root_path
   end
 
 end
