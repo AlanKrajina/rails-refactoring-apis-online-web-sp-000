@@ -20,7 +20,7 @@ class GithubService
   def get_username
     resp = Faraday.get("https://api.github.com/user") do |req|
       req.headers['Authorization'] = @access_token
-      req.params['v'] = '20160201'
+      req.headers['Accept'] = 'application/json'
     end
     JSON.parse(resp.body)["response"]["friends"]["items"]
 
