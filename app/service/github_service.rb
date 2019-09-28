@@ -43,7 +43,7 @@ def get_repos
     {},
     {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
     repo_array = JSON.parse(resp.body) # array of hashes
-    @repos = repo_array.map {|repo| GithubRepo.new(repo)}
+    @repos = repo_array.map {|repo| GithubRepo.new(repo)} # on every iteration create and return new instance
 end
 
 
