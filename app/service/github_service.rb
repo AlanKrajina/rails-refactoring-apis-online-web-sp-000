@@ -22,7 +22,7 @@ class GithubService
       req.headers['Authorization'] = @access_token
       req.headers['Accept'] = 'application/json'
     end
-    JSON.parse(resp.body)["response"]["friends"]["items"]
+    @user = JSON.parse(resp.body)
 
   end
 
