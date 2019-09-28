@@ -43,6 +43,7 @@ def get_repos
     {},
     {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
   res = JSON.parse(resp.body)
+
   @repos_array = new GithubRepo(res)
   binding.pry
 end
