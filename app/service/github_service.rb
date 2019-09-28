@@ -26,6 +26,7 @@ class GithubService
 #    session[:username] = user_hash['login']
 #  end
 
+# http issue:
 def get_username
   resp = Faraday.get 'https://api.github.com/user',
     {},
