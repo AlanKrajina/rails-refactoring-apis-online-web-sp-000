@@ -13,7 +13,7 @@ class GithubService
     end
 
     body = JSON.parse(response.body)
-    body["access_token"]
+    body["access_token"] = @access_token
   end
 
 end
