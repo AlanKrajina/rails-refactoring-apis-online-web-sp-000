@@ -22,8 +22,8 @@ class GithubService
       req.headers['Authorization'] = @access_token
       req.headers['Accept'] = 'application/json'
     end
-    @user = JSON.parse(resp.body)
-
+    user_hash = JSON.parse(user_resp.body)
+    session[:username] = user_hash['login']
   end
 
 
