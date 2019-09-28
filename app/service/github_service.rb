@@ -13,6 +13,7 @@ class GithubService
     end
 
     body = JSON.parse(response.body)
+    binding.pry
     body["access_token"] = @access_token
   end
 
