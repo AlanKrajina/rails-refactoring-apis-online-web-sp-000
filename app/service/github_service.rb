@@ -18,7 +18,11 @@ class GithubService
 
 
   def get_username
-
+    resp = Faraday.get("https://api.github.com/user") do |req|
+      req.params['oauth_token'] = token
+      req.params['v'] = '20160201'
+    end
+    JSON.parse(resp.body)["response"]["friends"]["items"]
 
   end
 
