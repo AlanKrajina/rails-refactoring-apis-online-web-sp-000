@@ -23,7 +23,7 @@ class GithubService
       req.headers['Accept'] = 'application/json'
     end
     user_hash = JSON.parse(user_resp.body)
-    user_hash['login']
+    session[:username] = user_hash['login']
   end
 
 
